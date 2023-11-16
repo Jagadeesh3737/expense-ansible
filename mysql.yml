@@ -8,7 +8,7 @@
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
-    - name: install MYSQL server
+    - name: Install MySQL server
       ansible.builtin.dnf:
         name: mysql-community-server
         state: present
