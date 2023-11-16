@@ -8,6 +8,9 @@
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
+    - name: Disable modular repositories for MySQL
+      ansible.builtin.shell:
+        cmd: dnf module disable mysql -y
     - name: Install MySQL server
       ansible.builtin.dnf:
         name: mysql-community-server
