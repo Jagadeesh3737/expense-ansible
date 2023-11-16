@@ -4,15 +4,15 @@
   tasks:
     - name: disabling nodejs
       ansible.builtin.shell: dnf module disable nodejs -y
-    - name: copying mysql repo
+    - name: copying MYSQL repo
       ansible.builtin.copy:
         src: mysql.repo
         dest: /etc/yum.repos.d/mysql.repo
-    - name: install mysql server
+    - name: install MYSQL server
       ansible.builtin.dnf:
         name: mysql-community-server
         state: present
-    - name: start mysql service
+    - name: start MYSQL service
       ansible.builtin.systemd:
         name: mysqld
         state: restarted
