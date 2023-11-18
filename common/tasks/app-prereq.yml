@@ -11,5 +11,5 @@
 - name: download the backend content and extract
   ansible.builtin.unarchive:
     src: https://expense-artifacts.s3.amazonaws.com/{{component}}.zip
-    dest: /app
+    dest: "{{ app_dir }}"
     remote_src: yes
