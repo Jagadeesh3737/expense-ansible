@@ -12,7 +12,7 @@
         dest: /etc/nginx/default.d/expense.conf
     - name: delete the old content of nginx
       ansible.builtin.file:
-        src: /usr/share/nginx/html
+        path: /usr/share/nginx/html
         state: absent
     - name: creating nginx dir
       ansible.builtin.file:
